@@ -15,9 +15,12 @@ namespace Q20
 
         static void Main(string[] args)
         {
+            // C#
             var task = GetArticleAboutUK(filePath);
             var article = task.Result;
+            article.Text.DebugLog("Content About UK");
 
+            // Bash
             $"cat ../jawiki-country.json | jq 'if .title == \"イギリス\" then .text else empty end'".WriteBashLine();
         }
 
